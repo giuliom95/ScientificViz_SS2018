@@ -2,7 +2,6 @@ import numpy as np
 from mpl_toolkits.mplot3d import axes3d
 import matplotlib as mpl
 import matplotlib.pyplot as plt
-import mpl_toolkits.axisartist as aa
 
 DATA_RES = 200
 VIZ_RES = 400
