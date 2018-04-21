@@ -1,11 +1,14 @@
+#!/bin/python
+
+# The maximum is on x=4, y=3 and has value 1
+
 import numpy as np
 from mpl_toolkits.mplot3d import axes3d
 import matplotlib as mpl
 import matplotlib.pyplot as plt
 
-if __name__=='__main__':
+def load_data(filename):
     data = []
-    max_tuple = (0,0,0)
 
     fd = open('Data', 'r')
     for line in fd.readlines():
@@ -13,10 +16,14 @@ if __name__=='__main__':
         if len(elems) == 3:
             data.append([float(elems[0]), float(elems[1]), float(elems[2])])
 
-    data = np.array(data)
+    return np.array(data)
+
+
+def find_max(data):
+    return data[data.argmax(0)[2]]
     
-    maxZ_tuple = data[data.argmax(0)[2]]
     
+def plot(data):
     xs = data[:,0]
     ys = data[:,1]
     zs = data[:,2]
@@ -25,6 +32,7 @@ if __name__=='__main__':
     Z = np.reshape(zs, (24,24))
     
     minZ = Z.min()
+    maxZ_tuple = find_max(data)
     maxZ = maxZ_tuple[2]
 
     fig = plt.figure()
@@ -43,5 +51,12 @@ if __name__=='__main__':
 
     ax.view_init(20, 30)
     plt.show()
+
+
+if __name__=='__main__':
+    data = load_data('./Data') 
+    plot(data)
+    
+
 
 
