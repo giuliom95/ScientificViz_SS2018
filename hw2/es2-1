@@ -1,0 +1,31 @@
+1) Data aquisition
+    We got this from sensor data (an MRI scan probably)
+2) Filtering
+    We need to filter out unneeded tissues and just focus on the aneurysm.
+    A) Filter out the noise that comes from the sensors.
+    B) Filter out irrelevant data to tissue unneded for representation.
+3) Mapping
+    3D field -> volume
+    scalar field (probably the density of the brain tissues) -> color
+4) Rendering
+    3d volume perspective rendering
+    
+1) Domain: 1D; Attribute: 1D; Scale type: Ordinal
+    The rod is thin so we can just assume it's a 1d domain.
+    The temperature is a set of 1D ordinal values by definition.
+2) Domain: 2D; Attribute: 0D; Scale type: Nominal
+    Normally a map is a 2D domain.
+    The attributes are not related to each other.
+3) Domain: 3D; Attribute: 3D; Scale type: Ordinal
+    A car is a physical object so it's 3D.
+    The air flow is defined by 3D vectors
+4) Domain: 1D; Atrribute: 1D; Scale Type: Ordinal
+    Even if roads are usually graphically represented as 2D, each road individually can be considered as a 1D segment and every segment can be mapped in a unique 1D domain.
+    Traffic can be indicated by just a scalar and then it can be mapped to a color like Google Maps does.
+5) Domain: 2D; Attribute: 1D; Scale Type: Ordinal
+    Every point of earth can be represented on a 2D domain.
+    The time is a scalar.
+    
+ 
+    
+    
